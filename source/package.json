@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "Core Prizm3D package that allows a user to create a base viewer.",
   "license": "",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server --content-base ../dist/ --inline"
+  },
   "repository": "https://github.com/quitedensepoint/prizm3d-core",
   "keywords": [
     "three.js",
@@ -15,6 +19,16 @@
   "homepage": "https://github.com/quitedensepoint/prizm3d-core",
   "bugs": "https://github.com/quitedensepoint/prizm3d-core/issues",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2017": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "gulp": "^3.9.1",
+    "gulp-exec": "^2.1.3",
+    "webpack": "^2.3.2",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "react": "^15.4.2"
   }
 }
