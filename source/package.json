@@ -1,0 +1,20 @@
+{
+  "name": "prizm3d-core",
+  "version": "0.0.1",
+  "description": "Core Prizm3D package that allows a user to create a base viewer.",
+  "license": "",
+  "repository": "https://github.com/quitedensepoint/prizm3d-core",
+  "keywords": [
+    "three.js",
+    "3d"
+  ],
+  "author": {
+    "name": "Cody Owens"
+  },
+  "contributors": [],
+  "homepage": "https://github.com/quitedensepoint/prizm3d-core",
+  "bugs": "https://github.com/quitedensepoint/prizm3d-core/issues",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
