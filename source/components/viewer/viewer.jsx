@@ -1,16 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import React3 from 'react-three-renderer';
 import * as THREE from 'three';
 
-
-class Core extends React.Component {
+export default class Viewer extends React.Component {
   constructor(props, context) {
     super(props, context);
 
     // construct the position vector here, because if we use 'new' within render,
     // React will think that things have changed when they have not.
-    this.cameraPosition = new THREE.Vector3(0, 0, 5);
+    this.cameraPosition = new THREE.Vector3(0, 0, 10);
 
     this.state = {
       cubeRotation: new THREE.Euler(),
@@ -36,11 +34,11 @@ class Core extends React.Component {
     const width = window.innerWidth; // canvas width
     const height = window.innerHeight; // canvas height
 
-    return (<React3
+    return (
+    <React3
       mainCamera="camera" // this points to the perspectiveCamera which has the name set to "camera" below
       width={width}
       height={height}
-
       onAnimate={this._onAnimate}
     >
       <scene>
@@ -57,7 +55,7 @@ class Core extends React.Component {
           rotation={this.state.cubeRotation}
         >
           <boxGeometry
-            width={1}
+            width={3}
             height={1}
             depth={1}
           />
@@ -69,5 +67,3 @@ class Core extends React.Component {
     </React3>);
   }
 }
-
-ReactDOM.render(<Core/>, document.getElementById('viewer'));

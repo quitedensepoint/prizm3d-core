@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './main.js',
+  entry: './components/layout.jsx',
   output: { path: path.resolve(__dirname, '../dist'), filename: 'bundle.js' },
   module: {
     rules: [
@@ -17,6 +17,56 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "style-loader",
+          }, {
+            loader: "css-loader",
+            options: {
+              modules: true,
+              localIdentName: '[name]__[local]___[hash:base64:5]'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.png$/,
+        use: [{
+          loader: 'url-loader'
+        }]
+      },
+      {
+        test: /\.jpg$/,
+        use: [{
+          loader: 'file-loader'
+        }]
+      },
+      {
+        test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'url-loader'
+        }]
+      },
+      {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'url-loader'
+        }]
+      },
+      {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'url-loader'
+        }]
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'url-loader'
+        }]
       }
     ]
   }
