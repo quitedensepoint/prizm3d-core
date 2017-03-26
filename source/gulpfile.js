@@ -8,5 +8,9 @@ gulp.task('default', function() {
 
 gulp.task('dev', function() {
   return gulp.src('./')
-    .pipe(exec('npm run dev'));
+    .pipe(exec('npm run dev'), function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
 });

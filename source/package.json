@@ -5,7 +5,7 @@
   "license": "",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server --content-base ../dist/ --inline"
+    "dev": "webpack-dev-server --content-base ../dist/ --inline --progress --colors --hot"
   },
   "repository": "https://github.com/quitedensepoint/prizm3d-core",
   "keywords": [
@@ -29,6 +29,8 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
-    "react": "^15.4.2"
+    "react": "^15.4.2",
+    "react-three-renderer": "^3.0.2",
+    "three": "^0.84.0"
   }
 }
