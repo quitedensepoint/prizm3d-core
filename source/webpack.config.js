@@ -1,5 +1,6 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
+//const ClosureCompilerPlugin = require('webpack-closure-compiler');
 
 module.exports = {
   entry: './components/layout.jsx',
@@ -69,5 +70,8 @@ module.exports = {
         }]
       }
     ]
-  }
+  },
+  plugins: [
+    
+  ]
 }
