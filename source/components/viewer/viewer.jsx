@@ -11,7 +11,7 @@ export default class Viewer extends React.Component {
     this.cameraPosition = new THREE.Vector3(0, 0, 10);
 
     this.state = {
-      cubeRotation: new THREE.Euler(),
+      
     };
 
     this._onAnimate = () => {
@@ -21,11 +21,7 @@ export default class Viewer extends React.Component {
       // this helps with updates and pure rendering.
       // React will be sure that the rotation has now updated.
       this.setState({
-        cubeRotation: new THREE.Euler(
-          this.state.cubeRotation.x + 0.1,
-          this.state.cubeRotation.y + 0.1,
-          0
-        ),
+
       });
     };
   }
@@ -51,9 +47,7 @@ export default class Viewer extends React.Component {
 
           position={this.cameraPosition}
         />
-        <mesh
-          rotation={this.state.cubeRotation}
-        >
+        <mesh>
           <boxGeometry
             width={3}
             height={1}
