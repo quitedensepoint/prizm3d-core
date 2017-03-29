@@ -7,13 +7,17 @@ import styles from './tree-view.css';
 export default class TreeView extends React.Component {
   constructor(props, context) {
     super();
+    this.objects = props.objects ? props.objects : [];
   }
 
   render() {
     const className = styles.treeView;
+    this.objects.map((object, index) => {
+      return <NavItem eventKey={index}>Placeholder {index}</NavItem>
+    });
     const treeNav = (
       <Nav stacked activeKey={1} className={className}>
-        <NavItem eventKey={1} href="/">Placeholder</NavItem>
+        { this.objects }
       </Nav>
     );
 

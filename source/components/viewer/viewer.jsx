@@ -1,6 +1,7 @@
 import React from 'react';
 import React3 from 'react-three-renderer';
 import * as THREE from 'three';
+import SceneObject from '../scene-object/scene-object.jsx';
 
 export default class Viewer extends React.Component {
   constructor(props, context) {
@@ -11,7 +12,7 @@ export default class Viewer extends React.Component {
     this.cameraPosition = new THREE.Vector3(0, 0, 10);
 
     this.state = {
-      
+
     };
 
     this._onAnimate = () => {
@@ -47,16 +48,7 @@ export default class Viewer extends React.Component {
 
           position={this.cameraPosition}
         />
-        <mesh>
-          <boxGeometry
-            width={3}
-            height={1}
-            depth={1}
-          />
-          <meshBasicMaterial
-            color={0x00ff00}
-          />
-        </mesh>
+        <SceneObject/>
       </scene>
     </React3>);
   }
