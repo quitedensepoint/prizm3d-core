@@ -1,23 +1,34 @@
+//Class Dependencies
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Bootstrap from '../node_modules/bootstrap/dist/css/bootstrap.css';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import scene from '../reducers/reducers.js';
+import App from './app.js';
 
-import Viewer from './viewer/viewer.jsx';
-import ActionBar from './action-bar/action-bar.jsx';
+//TEMP
+import React3 from 'react-three-renderer';
+import * as THREE from 'three';
+import SceneObject from './scene-object/scene-object.jsx';
+//END TEMP
 
-export default class Layout extends React.Component {
-  constructor() {
-    super();
-  }
+let store = createStore(scene, {
+  sceneObjects: [
+    {
+      width: 3,
+      height: 3,
+      depth: 3,
+      key: 1
+    }, {
+      width: 3,
+      height: 10,
+      depth: 1,
+      key: 2
+    }
+  ]
+})
 
-  render() {
-    return (
-      <div>
-        <ActionBar/>
-        <Viewer/>
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(<Layout/>, document.getElementById('viewer'));
+ReactDOM.render(
+  <Provider store={store}>
+  <App/>
+</Provider>, document.getElementById( 'viewer' ))
