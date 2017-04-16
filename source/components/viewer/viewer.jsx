@@ -16,11 +16,9 @@ class Viewer extends React.Component {
       ? props.sceneObjects
       : [ ];
 
-    /*
     this.state = {
       cubeRotation: new THREE.Euler( )
     };
-    */
 
     this._onAnimate = ( ) => {
       // we will get this callback every frame
@@ -39,37 +37,9 @@ class Viewer extends React.Component {
   render( ) {
     const width = window.innerWidth; // canvas width
     const height = window.innerHeight; // canvas height
-
-    const sceneObject = {
-      width: 3,
-      height: 3,
-      depth: 3
-    }
-
-    const box = [ < SceneObject width = {
-        1
-      }
-      height = {
-        20
-      }
-      depth = {
-        1
-      }
-      id = {
-        1
-      } />, < SceneObject width = {
-        20
-      }
-      height = {
-        1
-      }
-      depth = {
-        1
-      }
-      id = {
-        2
-      } />
-    ]
+    this.sceneObjects = this.sceneObjects.map(( sceneObject, index ) => {
+      return <SceneObject width={sceneObject.width} height={sceneObject.height} depth={sceneObject.depth} id={index}/>
+    });
 
     return (
       <React3 mainCamera="camera" // this points to the perspectiveCamera which has the name set to "camera" below
@@ -77,7 +47,8 @@ class Viewer extends React.Component {
         <scene>
           <perspectiveCamera name="camera" fov={75} aspect={width / height} near={0.1} far={1000} position={this.cameraPosition}/>
           <group>
-            {box}</group>
+            {this.sceneObjects}
+          </group>
         </scene>
       </React3>
     );

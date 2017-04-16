@@ -19,6 +19,11 @@ let store = createStore(scene, {
       height: 3,
       depth: 3,
       key: 1
+    }, {
+      width: 3,
+      height: 10,
+      depth: 1,
+      key: 2
     }
   ]
 })
