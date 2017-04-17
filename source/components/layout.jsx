@@ -18,12 +18,22 @@ let store = createStore(scene, {
       width: 3,
       height: 3,
       depth: 3,
-      key: 1
+      key: 1,
+      name: 'Boxy',
+      rotation: [
+        45, 45, 45
+      ],
+      editMode: true
     }, {
       width: 3,
       height: 10,
       depth: 1,
-      key: 2
+      key: 2,
+      name: 'Brown',
+      rotation: [
+        45, 45, 45
+      ],
+      editMode: false
     }
   ]
 })

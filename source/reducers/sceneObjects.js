@@ -1,7 +1,7 @@
-const sceneObject = (state = {}, action) => {
-  switch (action.type) {
+const sceneObject = ( state = {}, action ) => {
+  switch ( action.type ) {
     case 'TOGGLE_SCENEOBJECT':
-      if (state.id !== action.id) {
+      if ( state.id !== action.id ) {
         return state
       }
 
@@ -9,17 +9,25 @@ const sceneObject = (state = {}, action) => {
         completed: !state.completed
       })
 
+    case 'SET_OBJECT_NAME':
+      if ( state.id !== action.id ) {
+        return state
+      }
+
+      return Object.assign({}, state, { name: state.name })
+
     default:
       return state
   }
 }
 
-const sceneObjects = (state = [], action) => {
-  switch (action.type) {
+const sceneObjects = ( state = [], action ) => {
+  switch ( action.type ) {
     case 'TOGGLE_SCENEOBJECT':
-      return state.map(t =>
-        sceneObject(t, action)
-      )
+      return state.map(t => sceneObject( t, action ))
+
+    case 'SET_OBJECT_NAME':
+      return state.map(t => sceneObject( t, action ))
 
     default:
       return state
